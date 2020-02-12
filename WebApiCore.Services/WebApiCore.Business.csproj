@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiCore.Dtos\WebApiCore.Dtos.csproj" />
+    <ProjectReference Include="..\WebApiCore.Repositories\WebApiCore.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>
