@@ -54,6 +54,7 @@ namespace WebApiCore
             }
 
             app.UseExceptionHandlingMiddleware();
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
