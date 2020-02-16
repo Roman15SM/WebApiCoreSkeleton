@@ -7,6 +7,7 @@ namespace WebApiCore.DAL
     {
         public UserContext() : base()
         {
+            this.Database.Migrate();
         }
 
         public UserContext(DbContextOptions<UserContext> options) : base(options)
@@ -16,8 +17,10 @@ namespace WebApiCore.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connection = @"Server=PRGLAPD6G9HM2\ROLAND;Database=WebApiCore.DAL.UserContext;Trusted_Connection=True;ConnectRetryCount=0";
-            //services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
+            var connection = @"Integrated Security=SSPI; 
+                Database=WebApiCore.DAL.UserContext; 
+                Trusted_Connection=True;
+                ConnectRetryCount=0";
 
             optionsBuilder.UseSqlServer(connection);
         }
