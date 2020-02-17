@@ -35,12 +35,12 @@ namespace WebApiCore
             services.AddSingleton<IUserBusiness, UserBusiness>();
             services.AddSingleton<IUserDataBusiness, UserDataBusiness>();
 
-            services.AddSwaggerGen(gen =>
+            services.AddSwaggerGen(c =>
             {
-                gen.SwaggerDoc("v1", new OpenApiInfo
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Test",
-                    Description = "SS"
+                    Title = "Web API Core Skeleton",
+                    Version = "v1"
                 });
             });
         }
@@ -65,6 +65,7 @@ namespace WebApiCore
             app.UseSwaggerUI(ui =>
             {
                 ui.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API");
+                ui.RoutePrefix = string.Empty;
             });
         }
     }
